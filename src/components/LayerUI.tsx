@@ -302,21 +302,6 @@ const LayerUI = ({
 }: LayerUIProps) => {
   const isMobile = useIsMobile();
 
-  const renderEncryptedIcon = () => (
-    <a
-      className={clsx("encrypted-icon tooltip zen-mode-visibility", {
-        "zen-mode-visibility--hidden": zenModeEnabled,
-      })}
-      href="https://blog.excalidraw.com/end-to-end-encryption/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Tooltip label={t("encrypted.tooltip")} position="above" long={true}>
-        {shield}
-      </Tooltip>
-    </a>
-  );
-
   const renderExportDialog = () => {
     const createExporter = (type: ExportType): ExportCB => async (
       exportedElements,
@@ -517,7 +502,6 @@ const LayerUI = ({
                 zoom={appState.zoom}
               />
             </Island>
-            {renderEncryptedIcon()}
           </Section>
         </Stack.Col>
       </div>
