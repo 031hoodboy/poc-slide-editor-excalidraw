@@ -25,7 +25,6 @@ import CollabButton from "./CollabButton";
 import { ErrorDialog } from "./ErrorDialog";
 import { ExportCB, ExportDialog } from "./ExportDialog";
 import { FixedSideContainer } from "./FixedSideContainer";
-import { GitHubCorner } from "./GitHubCorner";
 import { HintViewer } from "./HintViewer";
 import { exportFile, load, shield } from "./icons";
 import { Island } from "./Island";
@@ -586,40 +585,11 @@ const LayerUI = ({
     </>
   );
 
-  return isMobile ? (
-    <>
-      {dialogs}
-      <MobileMenu
-        appState={appState}
-        elements={elements}
-        actionManager={actionManager}
-        libraryMenu={libraryMenu}
-        exportButton={renderExportDialog()}
-        setAppState={setAppState}
-        onCollabButtonClick={onCollabButtonClick}
-        onLockToggle={onLockToggle}
-        canvas={canvas}
-        isCollaborating={isCollaborating}
-        renderCustomFooter={renderCustomFooter}
-      />
-    </>
-  ) : (
+  return (
     <div className="layer-ui__wrapper">
       {dialogs}
       {renderFixedSideContainer()}
       {renderBottomAppMenu()}
-      {
-        <aside
-          className={clsx(
-            "layer-ui__wrapper__github-corner zen-mode-transition",
-            {
-              "transition-right": zenModeEnabled,
-            },
-          )}
-        >
-          <GitHubCorner appearance={appState.appearance} />
-        </aside>
-      }
       {renderFooter()}
     </div>
   );
