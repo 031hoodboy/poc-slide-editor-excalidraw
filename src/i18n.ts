@@ -11,40 +11,9 @@ export interface Language {
 
 export const defaultLang = { code: "en", label: "English" };
 
-const allLanguages: Language[] = [
-  { code: "ar-SA", label: "العربية", rtl: true },
-  { code: "bg-BG", label: "Български" },
-  { code: "ca-ES", label: "Català" },
-  { code: "de-DE", label: "Deutsch" },
-  { code: "el-GR", label: "Ελληνικά" },
-  { code: "es-ES", label: "Español" },
-  { code: "fa-IR", label: "فارسی", rtl: true },
-  { code: "fi-FI", label: "Suomi" },
-  { code: "fr-FR", label: "Français" },
-  { code: "he-IL", label: "עברית", rtl: true },
-  { code: "hi-IN", label: "हिन्दी" },
-  { code: "hu-HU", label: "Magyar" },
-  { code: "id-ID", label: "Bahasa Indonesia" },
-  { code: "it-IT", label: "Italiano" },
-  { code: "ja-JP", label: "日本語" },
-  { code: "ko-KR", label: "한국어" },
-  { code: "my-MM", label: "Burmese" },
-  { code: "nb-NO", label: "Norsk bokmål" },
-  { code: "nl-NL", label: "Nederlands" },
-  { code: "nn-NO", label: "Norsk nynorsk" },
-  { code: "pa-IN", label: "ਪੰਜਾਬੀ" },
-  { code: "pl-PL", label: "Polski" },
-  { code: "pt-BR", label: "Português Brasileiro" },
-  { code: "pt-PT", label: "Português" },
-  { code: "ro-RO", label: "Română" },
-  { code: "ru-RU", label: "Русский" },
-  { code: "sk-SK", label: "Slovenčina" },
-  { code: "sv-SE", label: "Svenska" },
-  { code: "tr-TR", label: "Türkçe" },
-  { code: "uk-UA", label: "Українська" },
-  { code: "zh-CN", label: "简体中文" },
-  { code: "zh-TW", label: "繁體中文" },
-].concat([defaultLang]);
+const allLanguages: Language[] = [{ code: "ko-KR", label: "한국어" }].concat([
+  defaultLang,
+]);
 
 export const languages: Language[] = allLanguages
   .sort((left, right) => (left.label > right.label ? 1 : -1))
